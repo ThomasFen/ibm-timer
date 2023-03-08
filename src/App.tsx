@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
+import Timer from './Timer';
 import './App.css';
 
 function App() {
+  const [activeTimer, setActiveTimer] = useState(false);
+  const initialSeconds = 10;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className='parent'>
+      <div className='child'>
+        {activeTimer ? (
+          <Timer initialSeconds={initialSeconds} onClose={(_) => setActiveTimer(false)} />
+        ) : (
+          <button type="button" onClick={() => setActiveTimer(true)}>Start Timer</button>
+        )}
+      </div>
+    </main>
   );
 }
 
