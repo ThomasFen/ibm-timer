@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import './Timer.css';
 
 interface Props {
   initialSeconds: number;
@@ -12,6 +13,11 @@ export default function Timer({ initialSeconds, onClose }: Props) {
   const restartCorrection = useRef(1);
   const nextSecondTs = useRef<number>();
   const finished = seconds === null;
+  const hovered = paused;
+  let className = 'seconds';
+  if (hovered) {
+    className += ' hover';
+  }
 
   useEffect(() => {
     const timerIsActive = timerRef.current !== null;
@@ -73,16 +79,16 @@ export default function Timer({ initialSeconds, onClose }: Props) {
   }
 
   return (
-    <div className="parent" onClick={() => onClose && onClose(seconds || 0)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}>
-      {finished ? <span>Done!</span> :
-        <span>{seconds}</span>
-      }
-      {paused && <>
-        <br />
-        <span>Paused...</span>
-      </>}
+    <div className='timer'>
+      <h1 className={className} onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={() => onClose && onClose(seconds || 0)}>
+        {seconds || 0}
+      </h1>
+      <div className='notification'>
+        {finished && <p>Done!</p>}
+        {paused && <p>Paused...</p>}
+      </div>
     </div>
   );
 }

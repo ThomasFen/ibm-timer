@@ -1,21 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+
 main {
+  width: 150px;
+  height: 150px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  display: flex;
   position: relative;
-  background: white;
-  /* margin: 0 auto; */
-  padding: 20px;
-  resize: both;
-  overflow: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 
-main div {
-  background: black;
-  color: white;
-  width: 200px;
-  height: 100px;
-  margin: -70px 0 0 -120px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 20px;
+button {
+  font-size: calc(10px + 2vmin);
+
 }

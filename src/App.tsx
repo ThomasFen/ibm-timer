@@ -4,18 +4,18 @@ import './App.css';
 
 function App() {
   const [activeTimer, setActiveTimer] = useState(false);
-  const initialSeconds = 10;
+  const initialSeconds = 3;
 
   return (
-    <main className='parent'>
-      <div className='child'>
-        {activeTimer ? (
-          <Timer initialSeconds={initialSeconds} onClose={(_) => setActiveTimer(false)} />
-        ) : (
-          <button type="button" onClick={() => setActiveTimer(true)}>Start Timer</button>
-        )}
-      </div>
-    </main>
+    <div className='app'>
+        <main>
+          {activeTimer ? (
+            <Timer initialSeconds={initialSeconds} onClose={(_) => setActiveTimer(false)} />
+          ) : (
+            <button type="button" onClick={() => setActiveTimer(true)}>Start Timer</button>
+          )}
+        </main>
+    </div>
   );
 }
 

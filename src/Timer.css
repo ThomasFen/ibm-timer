@@ -1,0 +1,35 @@
+/* .timer {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 0 20px 20px 0;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;  } */
+
+   .seconds {
+    /* margin-top: 74px; */
+    /* margin-bottom: 0; */
+    /* position: absolute;
+    top: 50%;
+    height: 100px;
+    margin-top: -50px; */
+  /* font-size: calc(10px + 2vmin); */
+
+  }
+
+
+
+  .hover {
+    background: #ffffd8;
+  }
+
+  .notification {
+    position: absolute;
+    margin: 0 auto;
+     top: 0;
+  }
