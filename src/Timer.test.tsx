@@ -59,7 +59,6 @@ describe('Timer', () => {
     expect(screen.getByText(initialSeconds - 5)).toBeInTheDocument();
 
     fireEvent.mouseLeave(screen.getByText(initialSeconds - 5));
-    expect(screen.queryByText('Paused...')).toBeNull();
 
     act(()=> jest.advanceTimersByTime(5000));
     expect(screen.getByText(initialSeconds - 10)).toBeInTheDocument();

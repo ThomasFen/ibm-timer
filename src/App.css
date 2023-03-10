@@ -1,28 +1,38 @@
 * {
   box-sizing: border-box;
 }
+
 .app {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: calc(10px + 2vmin);
   min-height: 100vh;
 }
 
-main {
-  width: 150px;
-  height: 150px;
-  border: 1px solid gray;
-  border-radius: 4px;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-
-
+/* source: IBM Carbon design system */
 button {
-  font-size: calc(10px + 2vmin);
-
+  color: #fff;
+  border: 1px solid #000000;
+  background-color: #0f62fe;
+  align-items: center;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: .875rem;
+  font-weight: 400;
+  justify-content: space-between;
+  letter-spacing: .16px;
+  line-height: 1.28572;
+  margin: 0;
+  max-width: 20rem;
+  min-height: 3rem;
+  outline: none;
+  padding: calc(.875rem - 3px) 63px calc(.875rem - 3px) 15px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  vertical-align: top;
+  width: max-content;
 }

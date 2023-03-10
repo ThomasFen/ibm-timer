@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   const [activeTimer, setActiveTimer] = useState(false);
-  const initialSeconds = 3;
+  const initialSeconds = 10;
 
   return (
     <div className='app'>

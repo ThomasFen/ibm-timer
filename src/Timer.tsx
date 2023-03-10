@@ -13,11 +13,7 @@ export default function Timer({ initialSeconds, onClose }: Props) {
   const restartCorrection = useRef(1);
   const nextSecondTs = useRef<number>();
   const finished = seconds === null;
-  const hovered = paused;
-  let className = 'seconds';
-  if (hovered) {
-    className += ' hover';
-  }
+  const hideNotifcation = !paused && !finished;
 
   useEffect(() => {
     const timerIsActive = timerRef.current !== null;
@@ -80,14 +76,16 @@ export default function Timer({ initialSeconds, onClose }: Props) {
 
   return (
     <div className='timer'>
-      <h1 className={className} onMouseEnter={handleMouseEnter}
+      <h1 className='seconds' onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onClick={() => onClose && onClose(seconds || 0)}>
         {seconds || 0}
       </h1>
-      <div className='notification'>
-        {finished && <p>Done!</p>}
-        {paused && <p>Paused...</p>}
+      <div className={'notification' + (hideNotifcation && ' hide')}>
+        <hr></hr>
+        <p className='label'>
+          {finished ? 'Done!' : 'Paused...'}
+        </p>
       </div>
     </div>
   );
