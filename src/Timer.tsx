@@ -78,11 +78,12 @@ export default function Timer({ initialSeconds, onClose }: Props) {
     <div className='timer'>
       <h1 className='seconds' onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onClick={() => onClose && onClose(seconds || 0)}>
+        onClick={() => onClose && onClose(seconds || 0)}
+        title="Click to stop timer">
         {seconds || 0}
       </h1>
       <div className={'notification' + (hideNotifcation && ' hide')}>
-        <hr></hr>
+        <hr className='divider'></hr>
         <p className='label'>
           {finished ? 'Done!' : 'Paused...'}
         </p>
