@@ -20,17 +20,17 @@ export default function Timer({ initialSeconds, onClose }: Props) {
 
     if (paused && timerIsActive) {
       clearTimer();
-      restartCorrection.current = nextSecondTs.current! - Date.now();
+      restartCorrection.current = nextSecondTs.current! - performance.now();
     }
 
     if (!paused && !timerIsActive) {
-      nextSecondTs.current = Date.now() + restartCorrection.current;
+      nextSecondTs.current = performance.now() + restartCorrection.current;
       timerRef.current = window.setTimeout(subtractSecond, Math.max(0, restartCorrection.current));
     }
 
     function subtractSecond() {
       const secondInMs = 1000;
-      const correctionFactor = Date.now() - nextSecondTs.current!;
+      const correctionFactor = performance.now() - nextSecondTs.current!;
       const msUntilNextSecond = secondInMs - correctionFactor;
 
       setSeconds(s => (!s || s <= 0) ? null : --s);
