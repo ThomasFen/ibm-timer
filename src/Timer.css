@@ -3,17 +3,23 @@
   }
 
   .seconds {
+    font-weight: 600;
+    font-size: 3rem;
+  }
+
+  .seconds-wrapper {
     border: 1px solid #0000007b;
     cursor: pointer;
+    text-align: center;
     padding: .625rem;
+    width: 100%;
     margin-bottom: 0;
-    font-weight: 600;
     border-radius: 4px;
     background-color: #f4f4f4;
 
   }
 
-  .seconds:hover {
+  .seconds-wrapper:hover {
     background: #ffffd8;
 
   }
