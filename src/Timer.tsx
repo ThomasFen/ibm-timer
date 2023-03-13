@@ -81,7 +81,7 @@ export default function Timer({ initialSeconds, onClose }: Props) {
         onMouseLeave={handleMouseLeave}
         onClick={() => onClose && onClose(seconds || 0)}
         title="Click to stop timer">
-        <span className='seconds' aria-atomic aria-live="polite">
+        <span className='seconds' role='timer' aria-atomic aria-live="polite">
           {seconds || 0}
         </span>
       </div>
